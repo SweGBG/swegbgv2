@@ -158,9 +158,8 @@ export default function Home() {
           ].map((step, i) => (
             <div
               key={step.num}
-              className={`reveal px-[22px] opacity-0 translate-y-6 transition-all duration-700 ease-out md:border-l md:border-line ${
-                i === 0 ? "md:border-l-0 md:pl-0" : ""
-              }`}
+              className={`reveal px-[22px] opacity-0 translate-y-6 transition-all duration-700 ease-out md:border-l md:border-line ${i === 0 ? "md:border-l-0 md:pl-0" : ""
+                }`}
             >
               <div className="font-mono text-[0.78rem] tracking-wide text-gold">{t(step.num as any)}</div>
               <h4 className="mt-2.5 font-chakra text-[1.08rem] font-semibold">{t(step.h as any)}</h4>
@@ -226,7 +225,7 @@ export default function Home() {
             <div className="flex items-baseline justify-between">
               <h3 className="font-chakra text-[1.2rem] font-semibold">Green Land</h3>
               <a
-                href="https://green-land.vercel.app"
+                href="greenland-gamma-peach.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[0.74rem] text-blue transition-colors hover:text-gold-bright hover:underline"
