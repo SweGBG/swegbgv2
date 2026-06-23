@@ -22,9 +22,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SweGBG Trading — Hemsidor & Webappar",
+  title: "SweGBG Trading — Hemsidor & Webappar i Next.js",
   description:
-    "Vi bygger Next.js-hemsidor och webappar för svenska småföretag. Du äger koden från dag ett.",
+    "Vi bygger skräddarsydda hemsidor och affärssystem i Next.js. Inga mallar, ingen prenumeration — du äger koden fullt ut från dag ett.",
 };
 
 export default function RootLayout({

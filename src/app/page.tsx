@@ -1,7 +1,7 @@
 "use client";
 
 import SiteEffects from "@/components/SiteEffects";
-import LangSwitch from "@/components/LangSwitch";
+import Navbar from "@/components/Navbar";
 import ComparisonTable from "@/components/ComparisonTable";
 import TierCards from "@/components/TierCards";
 import { useLang } from "@/context/LangContext";
@@ -22,30 +22,7 @@ export default function Home() {
       {/* noise flicker */}
       <div className="fixed inset-0 z-[6] pointer-events-none bg-blue/[0.015] animate-flicker" />
 
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-[5%] py-5 bg-gradient-to-b from-bg/95 to-transparent backdrop-blur-sm">
-        <div className="flex items-center gap-2.5 font-chakra text-[1.15rem] font-bold tracking-wide">
-          <span className="h-2 w-2 rounded-full bg-gold-bright shadow-[0_0_12px_#f0b347,0_0_24px_#c9922a] animate-pulse-dot" />
-          SWE<b className="text-gold-bright">GBG</b> TRADING
-        </div>
-        <div className="flex items-center">
-          <a href="#tjanster" className="ml-8 text-[0.88rem] font-medium text-ink-dim transition-colors hover:text-ink">
-            {t("navTjanster")}
-          </a>
-          <a href="#process" className="ml-8 text-[0.88rem] font-medium text-ink-dim transition-colors hover:text-ink">
-            {t("navProcess")}
-          </a>
-          <a href="#arbete" className="ml-8 text-[0.88rem] font-medium text-ink-dim transition-colors hover:text-ink">
-            {t("navArbete")}
-          </a>
-          <a
-            href="#kontakt"
-            className="ml-8 rounded-sm border border-line px-[18px] py-[9px] font-mono text-[0.78rem] text-gold-bright transition-colors hover:bg-gold/10 hover:border-gold"
-          >
-            {t("navCta")}
-          </a>
-          <LangSwitch />
-        </div>
-      </nav>
+      <Navbar />
 
       <section
         className="relative flex min-h-screen items-center bg-cover bg-center
