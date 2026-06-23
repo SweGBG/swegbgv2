@@ -230,7 +230,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="font-mono text-[0.74rem] text-blue transition-colors hover:text-gold-bright hover:underline"
               >
-                green-land.vercel.app
+                greenland-gamma-peach.vercel.app
               </a>
             </div>
             <p className="mt-3.5 text-[0.9rem] leading-relaxed text-ink-dim">{t("work4Desc")}</p>
