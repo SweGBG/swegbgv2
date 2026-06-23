@@ -74,6 +74,10 @@ export const translations: Dict = {
     sv: "En verkstad med kontaktformulär, medlemsinloggning och eget bokningssystem — allt samlat i ett sammanhängande system.",
     en: "A workshop site with a contact form, member login and its own booking system — all in one connected system.",
   },
+  work4Desc: {
+    sv: "Gårdsbutik med eget sortiment, färdiga matlådor och beställningsflöde — byggt för att kopplas till checkout. Tvåspråkig (SE/EN).",
+    en: "Farm shop with its own product range, ready-made food boxes and an order flow — built to connect to checkout. Bilingual (SE/EN).",
+  },
   demosLabel: { sv: "Demos", en: "Demos" },
   demoBadge: { sv: "Landing Page", en: "Landing Page" },
 
