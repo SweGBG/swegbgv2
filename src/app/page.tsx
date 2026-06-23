@@ -225,7 +225,7 @@ export default function Home() {
             <div className="flex items-baseline justify-between">
               <h3 className="font-chakra text-[1.2rem] font-semibold">Green Land</h3>
               <a
-                href="greenland-gamma-peach.vercel.app"
+                href="https://greenland-gamma-peach.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-mono text-[0.74rem] text-blue transition-colors hover:text-gold-bright hover:underline"
