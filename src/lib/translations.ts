@@ -17,8 +17,8 @@ export const translations: Dict = {
   heroH1Mid: { sv: " till ", en: " into " },
   heroH1Glow: { sv: "fler kunder.", en: "more customers." },
   heroLead: {
-    sv: "Vi bygger skräddarsydda hemsidor och affärssystem för småföretag — med rötterna i Göteborg och kunder över hela världen. Snabb leverans, ingen bindningstid, och du äger all kod fullt ut. Ingen mall. Ingen låst plattform.",
-    en: "We build custom websites and business systems for small businesses — rooted in Gothenburg, serving clients worldwide. Fast delivery, no lock-in period, and you fully own the code. No templates. No locked-in platform.",
+    sv: "Vi bygger snabba, skräddarsydda hemsidor och webappar som driver bokningar, leads och försäljning — och automatiserar arbetet däremellan. Rötterna i Göteborg, kunder över hela världen. Snabb leverans, ingen bindningstid, och du äger all kod fullt ut. Ingen mall. Ingen låst plattform.",
+    en: "We build fast, custom websites and web apps that drive bookings, leads and sales — and automate the work in between. Rooted in Gothenburg, serving clients worldwide. Fast delivery, no lock-in period, and you fully own the code. No templates. No locked-in platform.",
   },
   heroCtaPrimary: { sv: "▸ Boka kostnadsfri demo", en: "▸ Book a free demo" },
   heroCtaGhost: { sv: "Se tjänster", en: "See services" },
@@ -71,8 +71,8 @@ export const translations: Dict = {
     en: "Complete booking system for a hair salon with admin panel, client records, scheduling and automated email reminders.",
   },
   work3Desc: {
-    sv: "En verkstad med kontaktformulär, medlemsinloggning och eget bokningssystem — allt samlat i ett sammanhängande system.",
-    en: "A workshop site with a contact form, member login and its own booking system — all in one connected system.",
+    sv: "Demo-e-butik med produktkatalog, varukorg och kassaflöde — plus en adminsida med custom-byggd prisbevakare via eget API. Från skyltfönster till orderhantering i ett system.",
+    en: "Demo e-commerce store with product catalog, cart and checkout flow — plus an admin panel with a custom-built price tracker via its own API. From storefront to order handling in one system.",
   },
   work4Desc: {
     sv: "Gårdsbutik med eget sortiment, färdiga matlådor och beställningsflöde — byggt för att kopplas till checkout. Tvåspråkig (SE/EN).",
