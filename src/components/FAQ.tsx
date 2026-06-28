@@ -25,6 +25,9 @@ const FAQ_KEYS = [
   { q: "faq7Q", a: "faq7A" },
   { q: "faq8Q", a: "faq8A" },
   { q: "faq9Q", a: "faq9A" },
+  { q: "faq10Q", a: "faq10A" },
+  { q: "faq11Q", a: "faq11A" },
+  { q: "faq12Q", a: "faq12A" },
 ] as const;
 
 export default function FAQ() {

@@ -241,6 +241,30 @@ export const faqJsonLd = {
         text: "SweGBG har sin bas i Göteborg men arbetar helt platsoberoende med kunder över hela världen. Eftersom allt sker digitalt spelar din placering ingen roll — vi har levererat lokalt i Sverige och jobbar lika gärna med kunder internationellt. Kunderna sträcker sig från egenföretagare, restauranger och salonger till varumärken, e-handlare och växande bolag.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Vad kostar det att bygga en hemsida eller webbapp?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Priset beror på vad som ska byggas. En professionell landningssida är ett mindre projekt än ett bokningssystem, en e-butik eller ett komplett affärssystem. Vi börjar alltid med att förstå ditt behov och ger sedan ett tydligt fastpris innan en enda rad kod skrivs — inga överraskningar. Löpande underhåll ligger på 399 kr/mån, och du äger all kod och infrastruktur, så du betalar aldrig för att 'hyra' din sida.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Behöver jag vara teknisk för att jobba med er?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Inte alls. Du sköter din verksamhet — vi sköter tekniken. Vi förklarar allt på vanlig svenska, utan jargong, och du har samma kontaktperson genom hela projektet. Du behöver inte kunna något om kod, servrar eller databaser; vi sätter upp allt åt dig och ser till att du enkelt kan använda och uppdatera din sida när den är klar.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Kan ni hjälpa mig även om jag har en liten budget?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ja. Vi anpassar lösningen efter din budget och kan börja i mindre skala — till exempel en snabb, professionell landningssida — och bygga vidare med fler funktioner när verksamheten växer. Eftersom du äger koden från dag 1 är inget bortkastat; det vi bygger idag går att utveckla vidare imorgon utan att börja om. Du får maximal effekt för pengarna oavsett var du startar.",
+      },
+    },
   ],
 };
 
@@ -270,11 +294,11 @@ export const portfolioJsonLd = {
       position: 2,
       item: {
         "@type": "WebApplication",
-        name: "Verkstad",
-        url: "https://verkstad-rose.vercel.app",
+        name: "SweGBG Store",
+        url: "https://swegbgtrading.vercel.app",
         applicationCategory: "BusinessApplication",
         description:
-          "Verkstadssajt med kontaktformulär, medlemsinloggning och eget bokningssystem — allt samlat i ett sammanhängande system. Byggt i Next.js och Supabase.",
+          "Demo-e-butik med produktkatalog, varukorg och kassaflöde — plus adminpanel med custom-byggd prisbevakare via eget API. Byggt i Next.js, Supabase och Stripe.",
       },
     },
     {

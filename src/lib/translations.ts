@@ -168,4 +168,31 @@ export const translations: Dict = {
     sv: "SweGBG har sin bas i Göteborg men arbetar helt platsoberoende med kunder över hela världen. Eftersom allt sker digitalt spelar din placering ingen roll — vi har levererat lokalt i Sverige och jobbar lika gärna med kunder internationellt. Kunderna sträcker sig från egenföretagare, restauranger och salonger till varumärken, e-handlare och växande bolag.",
     en: "SweGBG is based in Gothenburg but works entirely location-independently with clients all over the world. Since everything happens digitally, your location doesn't matter — we've delivered locally in Sweden and work just as happily with clients internationally. Clients range from sole traders, restaurants and salons to brands, e-commerce businesses and growing companies.",
   },
+
+  faq10Q: {
+    sv: "Vad kostar det att bygga en hemsida eller webbapp?",
+    en: "What does it cost to build a website or web app?",
+  },
+  faq10A: {
+    sv: "Priset beror på vad som ska byggas. En professionell landningssida är ett mindre projekt än ett bokningssystem, en e-butik eller ett komplett affärssystem. Vi börjar alltid med att förstå ditt behov och ger sedan ett tydligt fastpris innan en enda rad kod skrivs — inga överraskningar. Löpande underhåll ligger på 399 kr/mån, och du äger all kod och infrastruktur, så du betalar aldrig för att 'hyra' din sida.",
+    en: "The price depends on what's being built. A professional landing page is a smaller project than a booking system, an online store or a complete business system. We always start by understanding your needs and then give you a clear fixed price before a single line of code is written — no surprises. Ongoing maintenance is 399 SEK/month, and you own all the code and infrastructure, so you never pay to 'rent' your site.",
+  },
+
+  faq11Q: {
+    sv: "Behöver jag vara teknisk för att jobba med er?",
+    en: "Do I need to be technical to work with you?",
+  },
+  faq11A: {
+    sv: "Inte alls. Du sköter din verksamhet — vi sköter tekniken. Vi förklarar allt på vanlig svenska, utan jargong, och du har samma kontaktperson genom hela projektet. Du behöver inte kunna något om kod, servrar eller databaser; vi sätter upp allt åt dig och ser till att du enkelt kan använda och uppdatera din sida när den är klar.",
+    en: "Not at all. You run your business — we handle the tech. We explain everything in plain language, without jargon, and you have the same contact person throughout the project. You don't need to know anything about code, servers or databases; we set everything up for you and make sure you can easily use and update your site once it's done.",
+  },
+
+  faq12Q: {
+    sv: "Kan ni hjälpa mig även om jag har en liten budget?",
+    en: "Can you help me even if I have a small budget?",
+  },
+  faq12A: {
+    sv: "Ja. Vi anpassar lösningen efter din budget och kan börja i mindre skala — till exempel en snabb, professionell landningssida — och bygga vidare med fler funktioner när verksamheten växer. Eftersom du äger koden från dag 1 är inget bortkastat; det vi bygger idag går att utveckla vidare imorgon utan att börja om. Du får maximal effekt för pengarna oavsett var du startar.",
+    en: "Yes. We adapt the solution to your budget and can start small — for example a fast, professional landing page — and build on with more features as your business grows. Since you own the code from day 1, nothing is wasted; what we build today can be developed further tomorrow without starting over. You get maximum value for your money no matter where you start.",
+  },
 };
