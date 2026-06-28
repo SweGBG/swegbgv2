@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Chakra_Petch, IBM_Plex_Mono, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { jsonLdGraph } from "@/lib/jsonld";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 
 // ─── FONTER ───────────────────────────────────────────────────
