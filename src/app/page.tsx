@@ -4,6 +4,7 @@ import SiteEffects from "@/components/SiteEffects";
 import Navbar from "@/components/Navbar";
 import ComparisonTable from "@/components/ComparisonTable";
 import TierCards from "@/components/TierCards";
+import FAQ from "@/components/FAQ";
 import { useLang } from "@/context/LangContext";
 
 export default function Home() {
@@ -275,6 +276,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <FAQ />
 
       <section
         id="kontakt"

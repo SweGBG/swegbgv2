@@ -2,8 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Chakra_Petch, IBM_Plex_Mono, Inter } from "next/font/google";
 import { LangProvider } from "@/context/LangContext";
 import { Analytics } from "@vercel/analytics/next";
+import { jsonLdGraph } from "@/lib/jsonld";
 import "./globals.css";
 
+// ─── FONTER (oförändrat från din nuvarande layout) ───────────
 const chakra = Chakra_Petch({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -24,28 +26,51 @@ const inter = Inter({
 
 const SITE_URL = "https://swegbg.com";
 
+// ─────────────────────────────────────────────────────────────
+//  METADATA
+//  Bred positionering: webbappbyrå + fullstack + systemutvecklare
+//  + brand/livsstil. Webbapp-orden lyfts fram utan att utesluta
+//  kunder som söker "hemsida".
+// ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "SweGBG Trading — Hemsidor & Webappar i Next.js",
-    template: "%s | SweGBG Trading",
+    default:
+      "SweGBG — Webbappar, system & hemsidor du äger | Göteborg",
+    template: "%s | SweGBG",
   },
   description:
-    "Vi bygger skräddarsydda hemsidor och affärssystem i Next.js. Inga mallar, ingen prenumeration — du äger koden fullt ut från dag ett.",
+    "Webbappbyrå i Göteborg. Vi bygger skräddarsydda webbappar, affärssystem och hemsidor i Next.js — du äger all kod, GitHub, Vercel och Supabase från dag 1. Ingen plattformslåsning, inga bindande avtal.",
   keywords: [
-    "webbyrå Göteborg",
-    "Next.js utveckling",
-    "skräddarsydd hemsida",
-    "webbapp småföretag",
-    "hemsida restaurang",
+    // Webbapp-kluster (din prio)
+    "webbapp",
+    "webbappar",
+    "webbapplikation",
+    "bygga webbapp",
+    "webbapp utveckling göteborg",
+    "fullstack utvecklare göteborg",
+    "next.js utveckling",
+    "react utvecklare sverige",
+    // System / affärsnytta
     "affärssystem webb",
+    "bokningssystem",
+    "e-handel utveckling",
+    "kundportal",
+    "skräddarsydd webbplats",
+    // Klassiska "hemsida"-sökningar (utesluter inga kunder)
+    "webbyrå göteborg",
+    "webbutvecklare göteborg",
+    "bygga hemsida göteborg",
+    "hemsida småföretag",
+    // Brand / livsstil
+    "brand webbdesign",
+    "varumärke hemsida",
   ],
-  authors: [{ name: "SweGBG Trading", url: SITE_URL }],
-  creator: "SweGBG Trading",
-  publisher: "SweGBG Trading",
-  applicationName: "SweGBG Trading",
+  authors: [{ name: "Lenn", url: SITE_URL }],
+  creator: "Lenn — SweGBG",
+  publisher: "SweGBG",
+  applicationName: "SweGBG",
   category: "technology",
-
   alternates: {
     canonical: "/",
     languages: {
@@ -53,59 +78,53 @@ export const metadata: Metadata = {
       "en-US": "/en",
     },
   },
-
   openGraph: {
     type: "website",
     locale: "sv_SE",
-    alternateLocale: "en_US",
+    alternateLocale: ["en_US"],
     url: SITE_URL,
-    siteName: "SweGBG Trading",
-    title: "SweGBG Trading — Hemsidor & Webappar i Next.js",
+    siteName: "SweGBG",
+    title: "SweGBG — Webbappar, system & hemsidor du äger",
     description:
-      "Skräddarsydda hemsidor och affärssystem i Next.js. Inga mallar, ingen prenumeration — du äger koden från dag ett.",
+      "Skräddarsydda webbappar, affärssystem och hemsidor i Next.js. Du äger all kod, GitHub, Vercel & Supabase från dag 1. Ingen plattformslåsning.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SweGBG Trading",
+        alt: "SweGBG — Webbappbyrå i Göteborg",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "SweGBG Trading — Hemsidor & Webappar i Next.js",
+    title: "SweGBG — Webbappar & system du äger",
     description:
-      "Skräddarsydda hemsidor och affärssystem i Next.js. Du äger koden från dag ett.",
+      "Skräddarsydda webbappar och hemsidor i Next.js. Du äger allt från dag 1.",
     images: ["/og-image.png"],
+    creator: "@DIN_X_HANDLE", // ← byt till din riktiga X-handle
   },
-
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-image-preview": "large",
       "max-snippet": -1,
+      "max-image-preview": "large",
       "max-video-preview": -1,
     },
   },
-
-
-
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   manifest: "/manifest.webmanifest",
-
-  formatDetection: {
-    telephone: false,
-    address: false,
-    email: false,
-  },
-
-  verification: {
-    // google: "din-google-verification-kod",
-  },
+  formatDetection: { telephone: false, address: false, email: false },
+  // verification: { google: "[GOOGLE_SEARCH_CONSOLE_TOKEN]" }, // avkommentera vid behov
 };
 
 export const viewport: Viewport = {
@@ -126,6 +145,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv" className="scroll-smooth">
+      <head>
+        {/* ─── STRUKTURERAD DATA (det AI-motorerna faktiskt läser) ─── */}
+        {/* En enda @graph med Organization + WebSite + Service + FAQ */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
+        />
+      </head>
       <body
         className={`${chakra.variable} ${plexMono.variable} ${inter.variable} bg-bg text-ink font-sans overflow-x-hidden`}
       >

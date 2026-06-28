@@ -93,4 +93,79 @@ export const translations: Dict = {
     en: "One-time project. No subscription. Full code ownership.",
   },
   footerLocation: { sv: "Göteborg, Sverige — Fullstack-utveckling", en: "Gothenburg, Sweden — Fullstack development" },
+
+  faqEyebrow: { sv: "// faq", en: "// faq" },
+  faqH2: { sv: "Vanliga frågor", en: "Frequently asked questions" },
+
+  faq1Q: { sv: "Vad gör SweGBG?", en: "What does SweGBG do?" },
+  faq1A: {
+    sv: "SweGBG är en webbappbyrå i Göteborg som bygger skräddarsydda webbappar, affärssystem och hemsidor i Next.js och React. Vi gör allt från snabba landningssidor till fullstack-system med databas, inloggning, betalningar och adminpanel. Kunden äger all kod, GitHub, Vercel och Supabase från dag 1.",
+    en: "SweGBG is a web-app agency in Gothenburg that builds custom web apps, business systems and websites in Next.js and React. We do everything from fast landing pages to fullstack systems with database, login, payments and an admin panel. The client owns all the code, GitHub, Vercel and Supabase from day 1.",
+  },
+
+  faq2Q: {
+    sv: "Vad är skillnaden mellan en hemsida och en webbapp?",
+    en: "What's the difference between a website and a web app?",
+  },
+  faq2A: {
+    sv: "En hemsida visar information. En webbapp gör saker — den har inloggning, databas, bokningar, betalningar, kundkonton eller ett adminsystem bakom kulisserna. SweGBG bygger båda, men specialiteten är riktiga webbappar och affärssystem som ersätter manuella arbetsflöden. Allt levereras som kod du själv äger.",
+    en: "A website displays information. A web app does things — it has login, a database, bookings, payments, customer accounts or an admin system behind the scenes. SweGBG builds both, but the specialty is real web apps and business systems that replace manual workflows. Everything is delivered as code you own yourself.",
+  },
+
+  faq3Q: { sv: "Vilka typer av projekt bygger ni?", en: "What kinds of projects do you build?" },
+  faq3A: {
+    sv: "I princip vad som helst som körs i webbläsaren: bokningssystem, e-handel, kundportaler, medlemsplattformar, CRM, dashboards och skräddarsydda affärssystem — samt professionella hemsidor och landningssidor för varumärken och egenföretagare. Allt byggs efter ditt behov, och vi kopplar in vilka externa tjänster och API:er du vill. Vi jobbar med allt från småföretag och restauranger till varumärken, e-handlare och större bolag.",
+    en: "Essentially anything that runs in the browser: booking systems, e-commerce, customer portals, membership platforms, CRMs, dashboards and custom business systems — as well as professional websites and landing pages for brands and sole traders. Everything is built to your needs, and we integrate whatever external services and APIs you want. We work with everything from small businesses and restaurants to brands, e-commerce companies and larger organizations.",
+  },
+
+  faq4Q: {
+    sv: "Äger jag koden till min webbapp eller hemsida?",
+    en: "Do I own the code to my web app or website?",
+  },
+  faq4A: {
+    sv: "Ja. Du äger all kod, ditt GitHub-repo, ditt Vercel-konto och din Supabase-databas från första dagen. Det finns ingen plattformslåsning och inga bindande avtal. Du hyr inte din digitala närvaro — du äger den.",
+    en: "Yes. You own all the code, your GitHub repo, your Vercel account and your Supabase database from day one. There's no platform lock-in and no binding contracts. You don't rent your digital presence — you own it.",
+  },
+
+  faq5Q: {
+    sv: "Kan ni skräddarsy lösningen och koppla in egna API:er?",
+    en: "Can you tailor the solution and integrate custom APIs?",
+  },
+  faq5A: {
+    sv: "Ja — det är hela poängen. Eftersom vi bygger med riktig kod (inte en mall) kan vi anpassa precis efter din verksamhet och integrera vilken tjänst som helst som har ett API: bokningskalendrar, bokföring, lagersystem, CRM, e-post, SMS, AI-funktioner, kartor, eller en intern tjänst du redan använder. Behöver du något ovanligt? Om det finns ett API, kan vi koppla in det.",
+    en: "Yes — that's the whole point. Because we build with real code (not a template), we can tailor everything to your business and integrate any service that has an API: booking calendars, accounting, inventory systems, CRM, email, SMS, AI features, maps, or an internal tool you already use. Need something unusual? If it has an API, we can connect it.",
+  },
+
+  faq6Q: {
+    sv: "Vilka betalningsalternativ kan ni bygga in?",
+    en: "Which payment options can you build in?",
+  },
+  faq6A: {
+    sv: "Alla vanliga — Stripe, Klarna, Swish, kort, faktura och prenumerationer. Betalningar är i praktiken bara API:er, så vi väljer det som passar din marknad och dina kunder bäst, eller kombinerar flera. Du sitter aldrig fast i en enda leverantör; väljer du att byta senare är det en integration vi kan ändra.",
+    en: "All the common ones — Stripe, Klarna, Swish, cards, invoicing and subscriptions. Payments are essentially just APIs, so we pick what fits your market and customers best, or combine several. You're never locked to a single provider; if you choose to switch later, it's an integration we can change.",
+  },
+
+  faq7Q: { sv: "Vilken teknik bygger ni i?", en: "What technology do you build with?" },
+  faq7A: {
+    sv: "Next.js (App Router), TypeScript, Tailwind CSS, Supabase för databas och autentisering, Stripe/Klarna/Swish för betalningar, Resend för e-post och Vercel för drift. Modern, snabb och produktionsfärdig stack — samma teknik som används av ledande mjukvarubolag.",
+    en: "Next.js (App Router), TypeScript, Tailwind CSS, Supabase for database and authentication, Stripe/Klarna/Swish for payments, Resend for email and Vercel for hosting. A modern, fast, production-ready stack — the same technology used by leading software companies.",
+  },
+
+  faq8Q: {
+    sv: "Bygger ni bara hemsidor eller även riktiga system?",
+    en: "Do you only build websites or real systems too?",
+  },
+  faq8A: {
+    sv: "Båda. Många tror 'hemsida' betyder en statisk informationssida — men SweGBG bygger fullstack-webbappar och affärssystem som hanterar bokningar, betalningar, lager, kunddata och automatiseringar. Hemsidan är ofta bara ytan; systemet bakom är det som skapar värde.",
+    en: "Both. Many people think 'website' means a static information page — but SweGBG builds fullstack web apps and business systems that handle bookings, payments, inventory, customer data and automation. The website is often just the surface; the system behind it is what creates value.",
+  },
+
+  faq9Q: {
+    sv: "Var finns ni och vilka kunder jobbar ni med?",
+    en: "Where are you based and who are your clients?",
+  },
+  faq9A: {
+    sv: "SweGBG har sin bas i Göteborg men arbetar helt platsoberoende med kunder över hela världen. Eftersom allt sker digitalt spelar din placering ingen roll — vi har levererat lokalt i Sverige och jobbar lika gärna med kunder internationellt. Kunderna sträcker sig från egenföretagare, restauranger och salonger till varumärken, e-handlare och växande bolag.",
+    en: "SweGBG is based in Gothenburg but works entirely location-independently with clients all over the world. Since everything happens digitally, your location doesn't matter — we've delivered locally in Sweden and work just as happily with clients internationally. Clients range from sole traders, restaurants and salons to brands, e-commerce businesses and growing companies.",
+  },
 };

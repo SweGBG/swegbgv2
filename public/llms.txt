@@ -1,0 +1,21 @@
+# SweGBG
+
+> Webbappbyrå i Göteborg som bygger skräddarsydda webbappar, affärssystem och hemsidor i Next.js och React. Kunden äger all kod, GitHub, Vercel och Supabase från dag 1 — ingen plattformslåsning och inga bindande avtal.
+
+SweGBG drivs av Lenn, en fullstack-utvecklare i Göteborg. Verksamheten bygger riktiga webbapplikationer — bokningssystem, e-handel, kundportaler, medlemsplattformar och skräddarsydda affärssystem — samt professionella hemsidor och landningssidor för varumärken och egenföretagare. Tekniken är Next.js, React, TypeScript, Tailwind CSS, Supabase och Stripe. Affärsmodellen är enkel och transparent: kunden äger sin egen kod, sitt GitHub-repo, sitt Vercel-konto och sin Supabase-databas från första dagen. SweGBG arbetar som kollaboratör, inte som plattformsleverantör. Underhåll erbjuds från 399 kr/mån. SweGBG arbetar platsoberoende med kunder över hela världen. Lösningarna skräddarsys efter varje kunds behov och kan integrera vilken extern tjänst eller betalningslösning som helst som har ett API (Stripe, Klarna, Swish, kort, faktura m.m.). Kunderna sträcker sig från småföretag, restauranger och salonger till varumärken, e-handlare och större bolag.
+
+## Tjänster
+- [Launch — Hemsida du äger](https://swegbg.com): Snabb, professionell hemsida eller landningssida i Next.js — riktig kod du äger, inte en mall.
+- [Growth — Webbapp med funktioner](https://swegbg.com): Skräddarsydd webbapp med databas, inloggning och adminpanel — t.ex. bokningssystem, e-handel eller kundportal.
+- [Ops System — Affärssystem](https://swegbg.com): Komplett affärssystem med betalningar, integrationer, automatisering och löpande drift.
+
+## Portfölj
+- [Atilli Berg](https://barberare.vercel.app): Komplett boknings-webbapp för frisörsalong med adminpanel (bokningar, schema, kundregister, rapporter) och automatiska påminnelser. Next.js + Supabase + Resend.
+- [Verkstad](https://verkstad-rose.vercel.app): Verkstadssajt med kontaktformulär, medlemsinloggning och eget bokningssystem i ett sammanhängande system. Next.js + Supabase.
+- [Green Land](https://greenland-gamma-peach.vercel.app): Tvåspråkig gårdsbutik med sortiment, matlådor och beställningsflöde byggt för checkout. Next.js + Tailwind + TypeScript.
+
+## Priser
+- [Prismodell](https://swegbg.com): Kunden betalar egna drifttjänster direkt (Vercel Pro ~210 kr/mån, Supabase Pro ~265 kr/mån). Underhåll från SweGBG: 399 kr/mån. Utveckling offereras per projekt.
+
+## Kontakt
+- [Kontakt](https://swegbg.com): Boka ett kostnadsfritt samtal om ditt webbapp- eller hemsideprojekt.
