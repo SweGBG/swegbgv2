@@ -88,41 +88,55 @@ export default function HomeContent() {
         </div>
       </section>
 
-      <div className="relative h-[60px] overflow-hidden bg-bg">
-        <svg
-          viewBox="0 0 1600 60"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute top-0 left-0 h-full w-full"
-        >
-          <defs>
-            <filter id="circuit-glow" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="3.2" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          <path
-            className="fill-none stroke-gold stroke-[1.5px] opacity-[0.16]"
-            d="M0 30 H200 V10 H400 V50 H600 V30 H800 V10 H1000 V50 H1200 V30 H1400 V10 H1600 V30 H1800"
-          />
-          <path
-            className="fill-none stroke-gold-bright [stroke-width:2.4px] [stroke-linecap:round] [stroke-dasharray:70_2100] [stroke-dashoffset:2170] animate-pulse-flow"
-            filter="url(#circuit-glow)"
-            d="M0 30 H200 V10 H400 V50 H600 V30 H800 V10 H1000 V50 H1200 V30 H1400 V10 H1600 V30 H1800"
-          />
-          <path
-            className="fill-none stroke-blue [stroke-width:2.2px] [stroke-linecap:round] [stroke-dasharray:46_2100] [stroke-dashoffset:2170] animate-pulse-flow [animation-delay:-2.1s]"
-            filter="url(#circuit-glow)"
-            d="M0 30 H200 V10 H400 V50 H600 V30 H800 V10 H1000 V50 H1200 V30 H1400 V10 H1600 V30 H1800"
-          />
-          <circle className="animate-node-pulse" cx="200" cy="30" r="3" fill="#f0b347" />
-          <circle className="animate-node-pulse [animation-delay:0.6s]" cx="600" cy="30" r="3" fill="#4fc3f7" />
-          <circle className="animate-node-pulse [animation-delay:1.2s]" cx="1000" cy="50" r="3" fill="#f0b347" />
-          <circle className="animate-node-pulse [animation-delay:1.8s]" cx="1400" cy="10" r="3" fill="#4fc3f7" />
-        </svg>
+      {/* ── value banner ── */}
+      <div className="group/banner relative overflow-hidden border-y border-line bg-panel">
+        {/* lager 1: dubbel radiell glöd (gold uppe, blå nere) */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(240,179,71,0.07),transparent_55%),radial-gradient(ellipse_at_bottom,rgba(79,195,247,0.05),transparent_55%)]" />
+        {/* lager 2: fint rutnät som tonar ut */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.4] [mask-image:linear-gradient(to_bottom,transparent,black_30%,black_70%,transparent)] bg-[linear-gradient(rgba(201,146,42,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(201,146,42,0.06)_1px,transparent_1px)] bg-[size:46px_46px]" />
+        {/* lager 3: ljusstrimma som sveper när man hovrar bannern */}
+        <div className="pointer-events-none absolute inset-y-0 left-[-30%] w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent transition-[left] duration-1000 ease-out group-hover/banner:left-[130%]" />
+        {/* hårlinjer upp/ner */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-bright/45 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-blue/30 to-transparent" />
+
+        <div className="relative mx-auto max-w-[1400px] px-[5%] py-8">
+          <div className="mb-6 flex items-center gap-2.5 font-mono text-[0.7rem] uppercase tracking-[0.18em] text-blue opacity-0 animate-fade-up">
+            <span className="h-px w-7 bg-blue" />
+            {t("bannerKicker")}
+            <span className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-blue animate-pulse-dot" />
+          </div>
+
+          <div className="grid grid-cols-2 gap-x-6 gap-y-7 md:grid-cols-4 md:divide-x md:divide-line">
+            {[
+              { t: "bannerItem1Title", s: "bannerItem1Sub" },
+              { t: "bannerItem2Title", s: "bannerItem2Sub" },
+              { t: "bannerItem3Title", s: "bannerItem3Sub" },
+              { t: "bannerItem4Title", s: "bannerItem4Sub" },
+            ].map((item, i) => (
+              <div
+                key={item.t}
+                style={{ animationDelay: `${0.15 + i * 0.12}s` }}
+                className={`group relative flex items-start gap-3 opacity-0 animate-fade-up ${i === 0 ? "" : "md:pl-6"}`}
+              >
+                {/* diamantmarkör med glöd på hover */}
+                <span className="relative mt-[6px] flex h-2.5 w-2.5 shrink-0 rotate-45 items-center justify-center border border-gold-bright/70 bg-gold-bright/15 transition-all duration-300 group-hover:bg-gold-bright group-hover:shadow-[0_0_12px_rgba(240,179,71,0.7)]">
+                  <span className="absolute inset-0 rounded-[1px] bg-gold-bright opacity-0 transition-opacity duration-300 group-hover:animate-pulse-dot group-hover:opacity-100" />
+                </span>
+                <div>
+                  <div className="font-chakra text-[1rem] font-semibold leading-snug text-ink transition-colors duration-300 group-hover:text-gold-bright">
+                    {t(item.t as any)}
+                  </div>
+                  <div className="mt-1 font-mono text-[0.72rem] leading-relaxed text-ink-dim transition-colors duration-300 group-hover:text-ink/80">
+                    {t(item.s as any)}
+                  </div>
+                  {/* underline som växer fram på hover */}
+                  <span className="mt-2 block h-px w-0 bg-gradient-to-r from-gold-bright to-transparent transition-all duration-500 group-hover:w-12" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       <section id="tjanster" className="px-[5%] py-[110px]">
