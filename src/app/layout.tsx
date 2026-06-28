@@ -1,11 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Chakra_Petch, IBM_Plex_Mono, Inter } from "next/font/google";
-import { LangProvider } from "@/context/LangContext";
 import { Analytics } from "@vercel/analytics/next";
 import { jsonLdGraph } from "@/lib/jsonld";
 import "./globals.css";
 
-// ─── FONTER (oförändrat från din nuvarande layout) ───────────
+// ─── FONTER ───────────────────────────────────────────────────
 const chakra = Chakra_Petch({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -27,22 +26,18 @@ const inter = Inter({
 const SITE_URL = "https://swegbg.com";
 
 // ─────────────────────────────────────────────────────────────
-//  METADATA
-//  Bred positionering: webbappbyrå + fullstack + systemutvecklare
-//  + brand/livsstil. Webbapp-orden lyfts fram utan att utesluta
-//  kunder som söker "hemsida".
+//  ROOT METADATA (svenska — gäller startsidan "/")
+//  Den engelska sidan /en har sin EGEN metadata i app/en/layout.tsx
 // ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      "SweGBG — Webbappar, system & hemsidor du äger | Göteborg",
+    default: "SweGBG — Webbappar, system & hemsidor du äger | Göteborg",
     template: "%s | SweGBG",
   },
   description:
     "Webbappbyrå i Göteborg. Vi bygger skräddarsydda webbappar, affärssystem och hemsidor i Next.js — du äger all kod, GitHub, Vercel och Supabase från dag 1. Ingen plattformslåsning, inga bindande avtal.",
   keywords: [
-    // Webbapp-kluster (din prio)
     "webbapp",
     "webbappar",
     "webbapplikation",
@@ -51,18 +46,15 @@ export const metadata: Metadata = {
     "fullstack utvecklare göteborg",
     "next.js utveckling",
     "react utvecklare sverige",
-    // System / affärsnytta
     "affärssystem webb",
     "bokningssystem",
     "e-handel utveckling",
     "kundportal",
     "skräddarsydd webbplats",
-    // Klassiska "hemsida"-sökningar (utesluter inga kunder)
     "webbyrå göteborg",
     "webbutvecklare göteborg",
     "bygga hemsida göteborg",
     "hemsida småföretag",
-    // Brand / livsstil
     "brand webbdesign",
     "varumärke hemsida",
   ],
@@ -76,6 +68,7 @@ export const metadata: Metadata = {
     languages: {
       "sv-SE": "/",
       "en-US": "/en",
+      "x-default": "/",
     },
   },
   openGraph: {
@@ -124,7 +117,6 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   formatDetection: { telephone: false, address: false, email: false },
-  // verification: { google: "[GOOGLE_SEARCH_CONSOLE_TOKEN]" }, // avkommentera vid behov
 };
 
 export const viewport: Viewport = {
@@ -146,8 +138,7 @@ export default function RootLayout({
   return (
     <html lang="sv" className="scroll-smooth">
       <head>
-        {/* ─── STRUKTURERAD DATA (det AI-motorerna faktiskt läser) ─── */}
-        {/* En enda @graph med Organization + WebSite + Service + FAQ */}
+        {/* Strukturerad data — svensk @graph på rotnivå */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
@@ -156,7 +147,9 @@ export default function RootLayout({
       <body
         className={`${chakra.variable} ${plexMono.variable} ${inter.variable} bg-bg text-ink font-sans overflow-x-hidden`}
       >
-        <LangProvider>{children}</LangProvider>
+        {/* OBS: LangProvider ligger nu på SID-nivå (page.tsx / en/page.tsx)
+            så att / startar på SV och /en startar på EN. */}
+        {children}
         <Analytics />
       </body>
     </html>

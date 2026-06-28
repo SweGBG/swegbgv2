@@ -11,8 +11,16 @@ interface LangContextType {
 
 const LangContext = createContext<LangContextType | undefined>(undefined);
 
-export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("sv");
+// initialLang gör att /en kan starta på engelska och / på svenska,
+// medan språkknappen (toggleLang) fortsätter fungera på båda.
+export function LangProvider({
+  children,
+  initialLang = "sv",
+}: {
+  children: ReactNode;
+  initialLang?: Lang;
+}) {
+  const [lang, setLang] = useState<Lang>(initialLang);
 
   const toggleLang = () => setLang((prev) => (prev === "sv" ? "en" : "sv"));
 

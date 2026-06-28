@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "@/context/LangContext";
+import { usePathname, useRouter } from "next/navigation";
 
 function FlagSV({ active }: { active: boolean }) {
   return (
@@ -42,10 +43,25 @@ function FlagEN({ active }: { active: boolean }) {
 
 export default function LangSwitch() {
   const { lang, toggleLang } = useLang();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Byter BÅDE klientspråket OCH URL:en så de aldrig hamnar i otakt.
+  // / → /en och /en → / (Next prefetch:ar så det känns direkt).
+  const handleSwitch = () => {
+    toggleLang();
+    if (lang === "sv") {
+      // går till engelska
+      if (!pathname.startsWith("/en")) router.push("/en");
+    } else {
+      // går till svenska
+      if (pathname.startsWith("/en")) router.push("/");
+    }
+  };
 
   return (
     <button
-      onClick={toggleLang}
+      onClick={handleSwitch}
       aria-label="Byt språk / Switch language"
       title={lang === "sv" ? "Switch to English" : "Byt till svenska"}
       className="ml-7 flex items-center gap-2 rounded-full border border-line/50 bg-panel/30 px-2.5 py-[6px] backdrop-blur-sm transition-colors hover:border-gold/50 hover:bg-panel/60"
