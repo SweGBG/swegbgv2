@@ -9,7 +9,7 @@
 //  brand/livsstil. Bred täckning = fler "hits", utesluter ingen kund.
 // ─────────────────────────────────────────────────────────────
 
-const SITE = "https://swegbg.com";
+const SITE = "https://www.swegbg.com";
 
 // 1. ORGANISATION / TJÄNST  ───────────────────────────────────
 //    @type-array gör att du matchar på FLER söktyper samtidigt:

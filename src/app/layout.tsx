@@ -23,7 +23,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const SITE_URL = "https://swegbg.com";
+const SITE_URL = "https://www.swegbg.com";
 
 // ─────────────────────────────────────────────────────────────
 //  ROOT METADATA (svenska — gäller startsidan "/")

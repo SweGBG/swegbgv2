@@ -13,7 +13,7 @@
 // ─────────────────────────────────────────────────────────────
 import type { MetadataRoute } from "next";
 
-const SITE = "https://swegbg.com";
+const SITE = "https://www.swegbg.com";
 
 // Privata ytor som inte ska indexeras (justera efter SweGBGv2)
 const DISALLOW = ["/admin", "/api", "/dashboard"];

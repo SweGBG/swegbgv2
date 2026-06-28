@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { jsonLdGraphEN } from "@/lib/jsonld.en";
 
-const SITE_URL = "https://swegbg.com";
+const SITE_URL = "https://www.swegbg.com";
 
 // ─────────────────────────────────────────────────────────────
 //  ENGELSK METADATA för /en

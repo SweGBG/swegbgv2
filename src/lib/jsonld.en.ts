@@ -6,7 +6,7 @@
 //  schema matchar synligt innehåll när /en visas på engelska.
 // ─────────────────────────────────────────────────────────────
 
-const SITE = "https://swegbg.com";
+const SITE = "https://www.swegbg.com";
 
 export const organizationJsonLdEN = {
   "@context": "https://schema.org",
