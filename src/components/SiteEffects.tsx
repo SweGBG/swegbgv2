@@ -29,6 +29,10 @@ function getTerminalLines(lang: Lang) {
 
 export default function SiteEffects({ lang }: { lang: Lang }) {
   useEffect(() => {
+    const reduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // ---- spotlight cursor glow ----
     const handleMouseMove = (e: MouseEvent) => {
       document.documentElement.style.setProperty("--mx", `${e.clientX}px`);
@@ -86,7 +90,6 @@ export default function SiteEffects({ lang }: { lang: Lang }) {
         entries.forEach((en) => {
           if (en.isIntersecting) {
             const el = en.target as HTMLElement;
-            // stagger siblings that share a parent for a cascading feel
             const siblings = el.parentElement
               ? Array.from(el.parentElement.querySelectorAll(":scope > .reveal"))
               : [el];
@@ -101,10 +104,6 @@ export default function SiteEffects({ lang }: { lang: Lang }) {
       { threshold: 0.15 }
     );
     revealEls.forEach((el) => obs.observe(el));
-
-    const reduced =
-      window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // ---- scroll progress bar ----
     let progress = document.getElementById("scroll-progress");
@@ -146,11 +145,23 @@ export default function SiteEffects({ lang }: { lang: Lang }) {
     };
     rafId = requestAnimationFrame(tick);
 
-    // ---- 3D tilt on cursor (.tilt) ----
+    // ---- 3D tilt on cursor (.tilt) + badge parallax ----
     const tiltEls = Array.from(document.querySelectorAll<HTMLElement>(".tilt"));
     const tiltCleanups: Array<() => void> = [];
     if (!reduced) {
       tiltEls.forEach((el) => {
+        // give the card its own 3D space so children can lift on the Z axis
+        el.style.transformStyle = "preserve-3d";
+
+        // any element marked [data-lift] floats above the card surface
+        const lifters = Array.from(
+          el.querySelectorAll<HTMLElement>("[data-lift]")
+        );
+        lifters.forEach((lift) => {
+          lift.style.transformStyle = "preserve-3d";
+          lift.style.willChange = "transform";
+        });
+
         let frame = 0;
         const move = (e: MouseEvent) => {
           cancelAnimationFrame(frame);
@@ -162,14 +173,28 @@ export default function SiteEffects({ lang }: { lang: Lang }) {
             el.style.transform = `perspective(900px) rotateX(${(-py * 7).toFixed(
               2
             )}deg) rotateY(${(px * 9).toFixed(2)}deg) translateY(-6px)`;
+
+            // lift floating children toward the cursor for parallax depth
+            for (const lift of lifters) {
+              const depth = parseFloat(lift.dataset.lift || "28");
+              lift.style.transition = "transform 120ms ease-out";
+              lift.style.transform = `translate3d(${(px * 10).toFixed(1)}px, ${(
+                py * 10
+              ).toFixed(1)}px, ${depth}px)`;
+            }
           });
         };
         const leave = () => {
           cancelAnimationFrame(frame);
           el.style.transition = "transform 520ms cubic-bezier(.16,1,.3,1)";
           el.style.transform = "";
+          for (const lift of lifters) {
+            lift.style.transition = "transform 520ms cubic-bezier(.16,1,.3,1)";
+            lift.style.transform = "";
+          }
           window.setTimeout(() => {
             el.style.transition = "";
+            for (const lift of lifters) lift.style.transition = "";
           }, 540);
         };
         el.addEventListener("mousemove", move);
