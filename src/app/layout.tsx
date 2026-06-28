@@ -152,6 +152,7 @@ export default function RootLayout({
             så att / startar på SV och /en startar på EN. */}
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
