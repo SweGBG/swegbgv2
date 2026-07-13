@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLang } from "@/context/LangContext";
 import LangSwitch from "@/components/LangSwitch";
+import AuthButton from "@/components/AuthButton";
 
 export default function Navbar() {
   const { t } = useLang();
@@ -46,6 +47,9 @@ export default function Navbar() {
           >
             {t("navCta")}
           </a>
+          <span className="ml-4">
+            <AuthButton />
+          </span>
           <LangSwitch />
         </div>
 
@@ -101,6 +105,9 @@ export default function Navbar() {
           >
             {t("navCta")}
           </a>
+          <div className="mt-2 flex justify-center" onClick={() => setIsOpen(false)}>
+            <AuthButton fullWidth />
+          </div>
           <div className="mt-4 flex justify-center">
             <LangSwitch />
           </div>
