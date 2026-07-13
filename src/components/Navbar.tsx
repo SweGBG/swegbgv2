@@ -57,19 +57,16 @@ export default function Navbar() {
           className="relative flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-[5px] lg:hidden"
         >
           <span
-            className={`block h-[1.5px] w-6 bg-ink transition-transform duration-300 ${
-              isOpen ? "translate-y-[6.5px] rotate-45" : ""
-            }`}
+            className={`block h-[1.5px] w-6 bg-ink transition-transform duration-300 ${isOpen ? "translate-y-[6.5px] rotate-45" : ""
+              }`}
           />
           <span
-            className={`block h-[1.5px] w-6 bg-ink transition-opacity duration-300 ${
-              isOpen ? "opacity-0" : "opacity-100"
-            }`}
+            className={`block h-[1.5px] w-6 bg-ink transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"
+              }`}
           />
           <span
-            className={`block h-[1.5px] w-6 bg-ink transition-transform duration-300 ${
-              isOpen ? "-translate-y-[6.5px] -rotate-45" : ""
-            }`}
+            className={`block h-[1.5px] w-6 bg-ink transition-transform duration-300 ${isOpen ? "-translate-y-[6.5px] -rotate-45" : ""
+              }`}
           />
         </button>
       </nav>
@@ -77,16 +74,14 @@ export default function Navbar() {
       {/* backdrop */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 lg:hidden ${
-          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 lg:hidden ${isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
       />
 
       {/* mobile slide-down menu */}
       <div
-        className={`fixed left-0 right-0 top-[68px] z-40 overflow-y-auto bg-bg/98 backdrop-blur-md transition-[max-height] duration-300 ease-out lg:hidden ${
-          isOpen ? "max-h-[calc(100vh-68px)]" : "max-h-0"
-        }`}
+        className={`fixed left-0 right-0 top-[68px] z-40 overflow-y-auto bg-bg/98 backdrop-blur-md transition-[max-height] duration-300 ease-out lg:hidden ${isOpen ? "max-h-[calc(100vh-68px)]" : "max-h-0"
+          }`}
       >
         <div className="flex flex-col gap-1 px-[5%] py-6">
           {links.map((link) => (

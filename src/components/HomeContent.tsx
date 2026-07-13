@@ -6,6 +6,8 @@ import ComparisonTable from "@/components/ComparisonTable";
 import TierCards from "@/components/TierCards";
 import FAQ from "@/components/FAQ";
 import { useLang } from "@/context/LangContext";
+import CircuitPulse from "@/components/CircuitPulse";
+
 
 export default function HomeContent() {
   const { lang, t } = useLang();
@@ -25,11 +27,14 @@ export default function HomeContent() {
 
       <Navbar />
 
-      <section
-        className="relative flex min-h-screen items-center bg-cover bg-center
-          bg-[image:linear-gradient(100deg,rgba(6,9,17,0.97)_0%,rgba(6,9,17,0.82)_32%,rgba(6,9,17,0.45)_58%,rgba(6,9,17,0.7)_100%),url('/cyberjs.jpg')]"
-      >
-        <div data-parallax="0.12" className="relative z-[2] mx-auto w-full max-w-[1400px] px-[5%] pt-[90px]">
+      <section className="relative flex min-h-screen items-center overflow-hidden">
+        {/* animerad kretskortsbakgrund med pulserande ström */}
+        <CircuitPulse src="/cyberjs-clean.jpg" fill className="z-0" />
+
+        {/* mörk gradient ovanpå — samma som tidigare bg-image-gradienten */}
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(100deg,rgba(6,9,17,0.97)_0%,rgba(6,9,17,0.82)_32%,rgba(6,9,17,0.45)_58%,rgba(6,9,17,0.7)_100%)]" />
+
+        <div className="relative z-[2] mx-auto w-full max-w-[1400px] px-[5%] pt-[90px]">
           <div className="mb-5 flex items-center gap-2.5 font-mono text-[0.78rem] uppercase tracking-[0.18em] text-blue opacity-0 animate-fade-up [animation-delay:0.2s]">
             <span className="h-px w-7 bg-blue" />
             {t("heroEyebrow")}
