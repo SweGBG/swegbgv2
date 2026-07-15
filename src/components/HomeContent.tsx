@@ -199,7 +199,7 @@ export default function HomeContent() {
           </h2>
         </div>
         <div className="mx-auto grid max-w-[1100px] gap-6 md:grid-cols-3">
-          <div className="reveal rounded-lg border border-line bg-panel p-[30px] opacity-0 translate-y-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-blue-dim">
+          <div className="reveal group rounded-lg border border-line bg-panel p-[30px] opacity-0 translate-y-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-gold-bright/40">
             <div className="flex items-baseline justify-between">
               <h3 className="font-chakra text-[1.2rem] font-semibold">Atilli Berg</h3>
               <a
@@ -211,7 +211,23 @@ export default function HomeContent() {
                 barberare.vercel.app
               </a>
             </div>
-            <p className="mt-3.5 text-[0.9rem] leading-relaxed text-ink-dim">{t("work1Desc")}</p>
+
+            {/* logo-emblem i mitten */}
+            <a
+              href="https://barberare.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative mx-auto mt-5 flex h-[160px] w-[160px] items-center justify-center"
+            >
+              <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.28),transparent_65%)] blur-lg opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+              <img
+                src="/atilli-card.png"
+                alt="Atilli Berg Frisör & Barberare"
+                className="relative h-full w-full rounded-lg object-cover drop-shadow-[0_4px_18px_rgba(212,175,55,0.4)] transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3"
+              />
+            </a>
+
+            <p className="mt-4 text-[0.9rem] leading-relaxed text-ink-dim">{t("work1Desc")}</p>
             <div className="mt-[18px] flex flex-wrap gap-2">
               {["Next.js", "Supabase", "Resend", "CSS Modules"].map((tag) => (
                 <span key={tag} className="rounded-full border border-line px-[9px] py-1 font-mono text-[0.66rem] text-ink-dim">
@@ -222,7 +238,7 @@ export default function HomeContent() {
           </div>
           <div className="reveal group rounded-lg border border-line bg-panel p-[30px] opacity-0 translate-y-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-gold-bright/40">
             <div className="flex items-baseline justify-between">
-              <h3 className="font-chakra text-[1.2rem] font-semibold">SweGBG Store</h3>
+              <h3 className="font-chakra text-[1.2rem] font-semibold">SweGBG</h3>
               <a
                 href="https://swegbgtrading.vercel.app"
                 target="_blank"
