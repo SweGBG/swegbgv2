@@ -89,6 +89,8 @@ export const organizationJsonLdEN = {
     itemListElement: [
       {
         "@type": "Offer",
+        price: "5499",
+        priceCurrency: "SEK",
         itemOffered: {
           "@type": "Service",
           name: "Launch — A website you own",
@@ -99,6 +101,8 @@ export const organizationJsonLdEN = {
       },
       {
         "@type": "Offer",
+        price: "9999",
+        priceCurrency: "SEK",
         itemOffered: {
           "@type": "Service",
           name: "Growth — A web app with features",

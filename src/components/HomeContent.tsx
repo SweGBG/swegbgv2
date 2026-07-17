@@ -197,6 +197,7 @@ export default function HomeContent() {
           <h2 className="mt-3.5 font-chakra text-[clamp(1.8rem,3.2vw,2.6rem)] font-semibold leading-tight">
             {t("arbeteH2")}
           </h2>
+          <p className="mt-4 text-[0.95rem] leading-relaxed text-ink-dim">{t("arbeteP")}</p>
         </div>
         <div className="mx-auto grid max-w-[1100px] gap-6 md:grid-cols-3">
           <div className="reveal group rounded-lg border border-line bg-panel p-[30px] opacity-0 translate-y-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:border-gold-bright/40">

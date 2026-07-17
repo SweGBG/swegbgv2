@@ -96,6 +96,8 @@ export const organizationJsonLd = {
     itemListElement: [
       {
         "@type": "Offer",
+        price: "5499",
+        priceCurrency: "SEK",
         itemOffered: {
           "@type": "Service",
           name: "Launch — Hemsida du äger",
@@ -106,6 +108,8 @@ export const organizationJsonLd = {
       },
       {
         "@type": "Offer",
+        price: "9999",
+        priceCurrency: "SEK",
         itemOffered: {
           "@type": "Service",
           name: "Growth — Webbapp med funktioner",

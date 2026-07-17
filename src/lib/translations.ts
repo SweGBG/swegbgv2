@@ -73,8 +73,12 @@ export const translations: Dict = {
     en: "No platform lock-in. No monthly fee to a third-party tool.",
   },
 
-  arbeteEyebrow: { sv: "// referensprojekt", en: "// reference projects" },
-  arbeteH2: { sv: "Byggt, levererat, i drift.", en: "Built, delivered, in production." },
+  arbeteEyebrow: { sv: "// demoprojekt", en: "// demo projects" },
+  arbeteH2: { sv: "Levande demos. Byggs på hela tiden.", en: "Living demos. Always evolving." },
+  arbeteP: {
+    sv: "Det här är inga skärmdumpar i ett portfolio — det är riktiga, klickbara system i drift som uppdateras löpande med nya funktioner. Klicka in, testa, se hur det känns.",
+    en: "These aren't portfolio screenshots — they're real, clickable systems in production, continuously updated with new features. Click in, try them, feel how they work.",
+  },
 
   work1Desc: {
     sv: "Komplett bokningssystem för frisörsalong med adminpanel, kundregister, schemaläggning och automatiska påminnelser via mejl.",
@@ -85,8 +89,8 @@ export const translations: Dict = {
     en: "Demo e-commerce store with product catalog, cart and checkout flow — plus an admin panel with a custom-built price tracker via its own API. From storefront to order handling in one system.",
   },
   work4Desc: {
-    sv: "Gårdsbutik med eget sortiment, färdiga matlådor och beställningsflöde — byggt för att kopplas till checkout. Tvåspråkig (SE/EN).",
-    en: "Farm shop with its own product range, ready-made food boxes and an order flow — built to connect to checkout. Bilingual (SE/EN).",
+    sv: "Gårdsbutik med eget sortiment, färdiga matlådor och komplett beställningsflöde, redo att kopplas mot valfri checkout. En bra bild av vår startpunkt — sen bygger vi vidare med precis det kunden vill ha.",
+    en: "Farm shop with its own product range, ready-made food boxes and a complete order flow, ready to connect to any checkout. A good picture of our starting point — from there we build exactly what the client wants.",
   },
   demosLabel: { sv: "Demos", en: "Demos" },
   demoBadge: { sv: "Landing Page", en: "Landing Page" },

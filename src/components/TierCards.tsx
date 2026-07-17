@@ -88,6 +88,28 @@ export default function TierCards() {
               </p>
               <p className="mt-3 text-[0.86rem] leading-relaxed text-ink-dim/90">{tier.description}</p>
 
+              <div className="mt-5 flex flex-wrap items-baseline gap-2.5 rounded-md border border-white/10 bg-black/30 px-3.5 py-3">
+                <span className="font-chakra text-[1.5rem] font-bold text-white">{tier.price}</span>
+                <span
+                  className="font-mono text-[0.62rem] uppercase tracking-[0.14em]"
+                  style={{ color: metal.accent }}
+                >
+                  {tier.priceLabel}
+                </span>
+                {tier.priceBadge && (
+                  <span
+                    className="ml-auto animate-pulse self-center rounded-full border px-2.5 py-0.5 font-mono text-[0.6rem] uppercase tracking-wide"
+                    style={{
+                      color: metal.accent,
+                      backgroundColor: `${metal.accent}1a`,
+                      borderColor: `${metal.accent}55`,
+                    }}
+                  >
+                    {tier.priceBadge}
+                  </span>
+                )}
+              </div>
+
               <div
                 className="mt-5 font-mono text-[0.66rem] uppercase tracking-[0.14em]"
                 style={{ color: metal.accent }}
