@@ -73,11 +73,11 @@ export const translations: Dict = {
     en: "No platform lock-in. No monthly fee to a third-party tool.",
   },
 
-  arbeteEyebrow: { sv: "// demoprojekt", en: "// demo projects" },
-  arbeteH2: { sv: "Levande demos. Byggs på hela tiden.", en: "Living demos. Always evolving." },
+  arbeteEyebrow: { sv: "// urval", en: "// selection" },
+  arbeteH2: { sv: "Ett urval av det vi byggt.", en: "A selection of what we've built." },
   arbeteP: {
-    sv: "Det här är inga skärmdumpar i ett portfolio — det är riktiga, klickbara system i drift som uppdateras löpande med nya funktioner. Klicka in, testa, se hur det känns.",
-    en: "These aren't portfolio screenshots — they're real, clickable systems in production, continuously updated with new features. Click in, try them, feel how they work.",
+    sv: "Ett handplockat urval av hemsidor och system i drift — fler exempel visar vi gärna vid förfrågan.",
+    en: "A hand-picked selection of live websites and systems — more examples gladly shared on request.",
   },
 
   work1Desc: {
