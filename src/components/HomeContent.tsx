@@ -7,6 +7,7 @@ import TierCards from "@/components/TierCards";
 import FAQ from "@/components/FAQ";
 import { useLang } from "@/context/LangContext";
 import CircuitPulse from "@/components/CircuitPulse";
+import KontaktForm from "@/components/KontaktForm";
 
 
 export default function HomeContent() {
@@ -339,15 +340,7 @@ export default function HomeContent() {
           {t("finalH2")}
         </h2>
         <p className="mt-5 text-[1.02rem] text-ink-dim">{t("finalP")}</p>
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#"
-            className="magnetic group relative inline-flex items-center gap-2 overflow-hidden rounded-sm bg-gold-bright px-[30px] py-[15px] font-mono text-[0.85rem] font-semibold tracking-wide text-[#0c0a06] transition-transform hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(240,179,71,0.35)]"
-          >
-            <span className="absolute left-[-120%] top-0 h-full w-3/5 -skew-x-[20deg] bg-gradient-to-r from-transparent via-white/50 to-transparent transition-[left] duration-500 group-hover:left-[130%]" />
-            {t("finalCta")}
-          </a>
-        </div>
+        <KontaktForm />
       </section>
 
       <footer className="flex flex-wrap items-center justify-between gap-3.5 border-t border-line px-[5%] py-[34px] font-mono text-[0.76rem] text-ink-dim">

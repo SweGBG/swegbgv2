@@ -102,6 +102,28 @@ export const translations: Dict = {
   },
   finalCta: { sv: "▸ Starta ditt projekt", en: "▸ Start your project" },
 
+  kontaktNamn: { sv: "Namn", en: "Name" },
+  kontaktEmail: { sv: "E-post", en: "Email" },
+  kontaktForetag: { sv: "Företag (valfritt)", en: "Company (optional)" },
+  kontaktMeddelande: {
+    sv: "Beskriv kort ditt projekt",
+    en: "Briefly describe your project",
+  },
+  kontaktSkicka: { sv: "▸ Skicka förfrågan", en: "▸ Send request" },
+  kontaktSkickar: { sv: "Skickar...", en: "Sending..." },
+  kontaktTack: {
+    sv: "Tack! Vi hör av oss inom 24 timmar.",
+    en: "Thanks! We'll be in touch within 24 hours.",
+  },
+  kontaktValidering: {
+    sv: "Fyll i namn, e-post och meddelande.",
+    en: "Please fill in name, email and message.",
+  },
+  kontaktFel: {
+    sv: "Något gick fel. Försök igen eller maila oss direkt.",
+    en: "Something went wrong. Try again or email us directly.",
+  },
+
   tierUniversalNote: {
     sv: "Engångsprojekt. Ingen prenumeration. Full kodägande.",
     en: "One-time project. No subscription. Full code ownership.",
