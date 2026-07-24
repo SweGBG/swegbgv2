@@ -1,14 +1,23 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Avsändare måste ligga på verifierad domän (swegbg.com är verifierad i Resend).
 const FROM = "SweGBG Trading <kontakt@swegbg.com>";
 // Dit du får in förfrågningar.
 const TO = "lenn.soder@proton.me";
 
 export async function POST(req: Request) {
+  // Skapa Resend-klienten HÄR, inte på modulnivå. Annars kraschar hela
+  // Vercel-bygget om RESEND_API_KEY saknas när Next samlar in sidor.
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json(
+      { error: "Serverkonfiguration saknas" },
+      { status: 500 }
+    );
+  }
+  const resend = new Resend(apiKey);
+
   const { namn, email, foretag, meddelande, webbplats, lang } =
     await req.json();
 
