@@ -25,10 +25,15 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 flex h-[68px] items-center justify-between bg-bg/95 px-[5%] backdrop-blur-md">
-        <div className="flex items-center gap-2.5 font-chakra text-[1.05rem] font-bold tracking-wide sm:text-[1.15rem]">
+        <a
+          href="#"
+          aria-label="Till toppen"
+          onClick={() => setIsOpen(false)}
+          className="flex cursor-pointer items-center gap-2.5 font-chakra text-[1.05rem] font-bold tracking-wide transition-opacity hover:opacity-80 sm:text-[1.15rem]"
+        >
           <span className="h-2 w-2 shrink-0 rounded-full bg-gold-bright shadow-[0_0_12px_#f0b347,0_0_24px_#c9922a] animate-pulse-dot" />
           SWE<b className="text-gold-bright">GBG</b> TRADING
-        </div>
+        </a>
 
         {/* desktop nav */}
         <div className="hidden items-center lg:flex">

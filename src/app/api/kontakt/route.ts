@@ -6,6 +6,19 @@ const FROM = "SweGBG Trading <kontakt@swegbg.com>";
 // Dit du får in förfrågningar.
 const TO = "lenn.soder@proton.me";
 
+// Enkel escape så inskickad text inte kan bryta HTML-mailet.
+function esc(s: string) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// Gör radbrytningar i fritext till <br> för HTML-varianten.
+function nl2br(s: string) {
+  return esc(s).replace(/\n/g, "<br>");
+}
+
 export async function POST(req: Request) {
   // Skapa Resend-klienten HÄR, inte på modulnivå. Annars kraschar hela
   // Vercel-bygget om RESEND_API_KEY saknas när Next samlar in sidor.
@@ -38,7 +51,7 @@ export async function POST(req: Request) {
   const isEn = lang === "en";
 
   try {
-    // 1) Notis till dig.
+    // 1) Notis till dig — text (fallback) + html (renderas rätt överallt).
     await resend.emails.send({
       from: FROM,
       to: TO,
@@ -50,6 +63,16 @@ export async function POST(req: Request) {
         `Företag: ${foretag || "-"}\n` +
         `Språk: ${isEn ? "EN" : "SV"}\n\n` +
         `${meddelande}`,
+      html: `
+        <div style="font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;color:#111">
+          <p><strong>Namn:</strong> ${esc(namn)}</p>
+          <p><strong>E-post:</strong> ${esc(email)}</p>
+          <p><strong>Företag:</strong> ${esc(foretag || "-")}</p>
+          <p><strong>Språk:</strong> ${isEn ? "EN" : "SV"}</p>
+          <hr style="border:none;border-top:1px solid #ddd;margin:16px 0">
+          <p>${nl2br(meddelande)}</p>
+        </div>
+      `,
     });
 
     // 2) Auto-svar till kunden, på deras språk.
@@ -69,6 +92,23 @@ export async function POST(req: Request) {
           `Tack för att du hörde av dig! Vi har tagit emot din förfrågan och återkommer inom 24 timmar.\n\n` +
           `Ditt meddelande:\n"${meddelande}"\n\n` +
           `Vänliga hälsningar,\nSweGBG Trading\nswegbg.com`,
+      html: isEn
+        ? `
+          <div style="font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;color:#111">
+            <p>Hi ${esc(namn)},</p>
+            <p>Thanks for reaching out! We've received your request and will get back to you within 24 hours.</p>
+            <p style="color:#555"><em>Your message:</em><br>"${nl2br(meddelande)}"</p>
+            <p>Best regards,<br><strong>SweGBG Trading</strong><br>swegbg.com</p>
+          </div>
+        `
+        : `
+          <div style="font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;color:#111">
+            <p>Hej ${esc(namn)},</p>
+            <p>Tack för att du hörde av dig! Vi har tagit emot din förfrågan och återkommer inom 24 timmar.</p>
+            <p style="color:#555"><em>Ditt meddelande:</em><br>"${nl2br(meddelande)}"</p>
+            <p>Vänliga hälsningar,<br><strong>SweGBG Trading</strong><br>swegbg.com</p>
+          </div>
+        `,
     });
 
     return NextResponse.json({ ok: true });
